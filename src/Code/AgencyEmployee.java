@@ -3,7 +3,7 @@ package Code;
 import java.math.BigDecimal;
 import java.util.Objects;
 
-public class AgencyEmployee extends Person{
+public class AgencyEmployee extends Person {
     private PositionInTheCompany position;
     private BigDecimal salary;
 

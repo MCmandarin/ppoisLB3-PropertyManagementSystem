@@ -1,11 +1,45 @@
 package Code;
 
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 
 public class RealEstateAgency {
     private Set<RealEstate> availableRealEstate;
     private Set<Client> clients;
+    private Map<PositionInTheCompany, List<AgencyEmployee>> employees;
+
+
+    public Map<PositionInTheCompany, List<AgencyEmployee>> getEmployees() {
+        return employees;
+    }
+
+    public void setEmployees(Map<PositionInTheCompany, List<AgencyEmployee>> employees) {
+        this.employees = employees;
+    }
+
+    public void addPositionEmployees(PositionInTheCompany name, AgencyEmployee employee) {
+        if (employee.getPosition() != name) {
+            throw new IllegalArgumentException("invalid position!");
+        }
+        this.employees.put(name, null);
+        List<AgencyEmployee> employeeList = employees.get(name);
+        employeeList = new ArrayList<>();
+        employees.put(name, employeeList);
+        employeeList.add(employee);
+    }
+
+    public void deletePositionEmployees(PositionInTheCompany name) {
+        employees.remove(name);
+    }
+
+    public void addEmployee(AgencyEmployee employee) {
+        List<AgencyEmployee> employeeList = employees.get(employee.getPosition());
+        employeeList.add(employee);
+    }
+
+    public void deleteEmployee(AgencyEmployee employee) {
+        List<AgencyEmployee> employeeList = employees.get(employee.getPosition());
+        employeeList.remove(employee);
+    }
 
     public Set<RealEstate> getAvailableRealEstate() {
         return availableRealEstate;
