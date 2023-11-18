@@ -7,6 +7,16 @@ public class RealEstate {
     private double area;
     private int numberOfRooms;
 
+    private RealEstateCategory realEstateCategory;
+
+    public RealEstateCategory getRealEstateCategory() {
+        return realEstateCategory;
+    }
+
+    public void setRealEstateCategory(RealEstateCategory realEstateCategory) {
+        this.realEstateCategory = realEstateCategory;
+    }
+
     public String getAddress() {
         return address;
     }
@@ -42,12 +52,12 @@ public class RealEstate {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         RealEstate that = (RealEstate) o;
-        return Double.compare(area, that.area) == 0 && numberOfRooms == that.numberOfRooms && Objects.equals(address, that.address);
+        return Double.compare(area, that.area) == 0 && numberOfRooms == that.numberOfRooms && Objects.equals(address, that.address) && realEstateCategory == that.realEstateCategory;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(address, area, numberOfRooms);
+        return Objects.hash(address, area, numberOfRooms, realEstateCategory);
     }
 
     @Override
@@ -56,6 +66,7 @@ public class RealEstate {
                 "address='" + address + '\'' +
                 ", area=" + area +
                 ", numberOfRooms=" + numberOfRooms +
+                ", realEstateCategory=" + realEstateCategory +
                 '}';
     }
 }
