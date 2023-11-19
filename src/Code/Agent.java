@@ -1,12 +1,16 @@
 package Code;
 
 import java.math.BigDecimal;
+import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
 public class Agent {
     private Set<Transaction> transactions;
 
+    public Agent(){
+        transactions = new HashSet<>();
+    }
     public Set<Transaction> getTransactions() {
         return transactions;
     }

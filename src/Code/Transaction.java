@@ -15,6 +15,10 @@ public class Transaction {
         this.isCompleted = false;
     }
 
+    public TransactionType getTransactionType() {
+        return transactionType;
+    }
+
     public boolean isCompleted() {
         return isCompleted;
     }

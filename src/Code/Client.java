@@ -1,6 +1,7 @@
 package Code;
 
 import java.math.BigDecimal;
+import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 import java.util.regex.Matcher;
@@ -12,6 +13,10 @@ public class Client extends Person {
     private String email;
     private String phoneNumber;
     private BigDecimal wallet;
+
+    public Client(){
+        realEstates = new HashSet<>();
+    }
 
     public Set<RealEstate> getRealEstates() {
         return realEstates;

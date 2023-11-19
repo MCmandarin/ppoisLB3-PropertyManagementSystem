@@ -7,6 +7,12 @@ public class RealEstateAgency {
     private Set<Client> clients;
     private Map<PositionInTheCompany, List<AgencyEmployee>> employees;
 
+    public RealEstateAgency(){
+        clients = new HashSet<>();
+        availableRealEstate = new HashSet<>();
+        employees = new HashMap<>();
+    }
+
 
     public Map<PositionInTheCompany, List<AgencyEmployee>> getEmployees() {
         return employees;
